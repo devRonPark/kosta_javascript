@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 프로그램의 흐름 제어
+        // 분기, 반복
+
+        // if ( bool ) { 
+        //   bool 값이 true 일 때 처리되는 블록 
+        // }
+        if (true) {
+            // alert('if(true)');
+            console.log('true 일 때 실행하는 블록 1');
+        }
+
+        if (false) {
+            // alert('if(false)');
+            console.log('true 일 때 실행하는 블록 2');
+        }
+
+        // 현재 시각에서 오전과 오후를 구분하는 코드 작성
+        const currentDate = new Date();
+        const currentHour = currentDate.getHours();
+        // Before  
+        // if (currentHour >= 12) {
+        //     console.log("오후");
+        // } else {
+        //     console.log("오전");
+        // }
+        // After
+        const timeOfDay = currentHour >= 12 ? "오후" : "오전";
+        console.log(timeOfDay);
+
+        // 학점 표현
+        // A : score >= 90
+        // B : score >= 80 && score < 90
+        // C : score >= 70 && score < 80
+        // F : score < 70
+
+        let score = 99;
+        if (score >= 90) console.log("A");
+        else if (score >= 80) console.log("B");
+        else if (score >= 70) console.log("C");
+        else console.log("F");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
