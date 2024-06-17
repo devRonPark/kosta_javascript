@@ -40,11 +40,112 @@
         // C : score >= 70 && score < 80
         // F : score < 70
 
-        let score = 99;
-        if (score >= 90) console.log("A");
-        else if (score >= 80) console.log("B");
-        else if (score >= 70) console.log("C");
-        else console.log("F");
+        // let score = 99;
+        // if (score >= 90) console.log("A");
+        // else if (score >= 80) console.log("B");
+        // else if (score >= 70) console.log("C");
+        // else console.log("F");
+
+        // const numberIptVal = Number(prompt("숫자를 입력하세요."));
+
+        // if (isNaN(numberIptVal)) {
+        //     alert("숫자를 입력해주세요.")
+        // } else if (numberIptVal % 2 == 0) {
+        //     console.log("짝수");
+        // } else {
+        //     console.log("홀수");
+        // }
+
+        // 사용자로부터 값을 입력 받아서 하이로우 게임
+        // 1~100 => 임의의 숫자 하나를 정의
+        const answer = Math.floor(Math.random() * 100) + 1;
+        let turn = 1;
+        let userIpt = Number(prompt(`[${turn}번째 턴] 1~100 사이의 숫자를 입력하세요`));
+        if (isNaN(userIpt)) {
+            alert('숫자를 입력해주세요.');
+            userIpt = Number(prompt(`[${turn}번째 턴] 1~100 사이의 숫자를 입력하세요`));
+        }
+
+        while(userIpt != answer && turn < 10) {
+            // 정답 판단
+            if (userIpt > answer) alert("low");
+            else if (userIpt < answer) alert("high");
+    
+            turn++;
+            userIpt = Number(prompt(`[${turn}번째 턴] 1~100 사이의 숫자를 입력하세요`));
+            if (isNaN(userIpt)) {
+                alert('숫자를 입력해주세요.');
+                userIpt = Number(prompt(`[${turn}번째 턴] 1~100 사이의 숫자를 입력하세요`));
+            }
+        }
+        
+        // if (userIpt != answer) alert("실패");
+        // else alert("정답");
+
+        // if (confirm('삭제하시겠습니까?')) {
+        //     alert('삭제되었습니다.');
+        // }
+
+        // switch (값) {
+        //   case 조건 값 1:
+        //     처리구문
+        //     break;
+        // }
+
+        // 등급 판단 : 0 1 2 3
+        let grade = 1;
+        switch (grade) {
+            case 0:
+                alert('안녕하세요! 회원가입을 해주세요.');
+                break;
+            case 1:
+                alert('회원님, 반갑습니다.');
+                break;
+            case 2:
+                alert('처리해야 할 메시지가 존재합니다.');
+                break;
+            case 3:
+                alert('관리자님 반갑습니다.')
+                break;
+            default:
+                alert('잘못된 요청입니다.');
+        }
+
+        // switch 케이스로 학점 처리
+        // 학점 표현
+        // score / 10 =
+        // A : score >= 90 => 10, 9
+        // B : score >= 80 && score < 90 => 8
+        // C : score >= 70 && score < 80 => 7
+        // F : score < 70 => default
+
+        let score = 90;
+        switch (Math.floor(score / 10)) {
+            case 10: case 9:
+                alert("A");
+                break;
+            case 8:
+                alert("B");
+                break;
+            case 7:
+                alert("C");
+                break;
+            default:
+                alert("F");
+        }
+
+        // 삼항 연산자
+        // 논리값 ? true 일 때 값 : false 일 때 값
+        // 짝수 홀수 판단하는 코드
+        let num1 = 10;
+        let chk = num1 % 2 == 0 ? '짝수' : '홀수';
+        alert(chk);
+
+        // 논리값 || 논리값이 false 일 때 실행
+        let num2;
+        let num3 = num2 || 100;
+
+        console.log("num => ", num3);
     </script>
 </head>
 <body>
