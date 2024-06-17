@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 변수 : 특정 데이터를 저장 -> 이후에 참조
+        // 변수 생성 => 메모리 공간을 생성하고 데이터와 연결, 데이터의 저장 주소를 가진다.
+        // 변수 선언 시 사용하는 키워드
+        // var : 함수 내에서 선언한 경우 함수 안까지가 범위
+        // let : 블록 범위, 중복 선언 안된다!
+        // const : 블록 범위, 상수 => 초기화 이후에는 값을 대입할 수 없다.
+
+        // 함수, 분기, 반복.. => 블록으로 처리되는 범위 구분
+        function fn() {
+            // ...
+        }
+        if(true) {
+            // 처리 ...
+        }
+        // while(true) {
+        //     // ...
+        // }
+
+        {
+            let num = 10;
+            // let num = 20;
+            console.log(num);
+        }
+
+        // console.log('num => ', num);
+
+        {
+            const pi = 3.141592;
+            console.log("pi => ", pi);
+            // pi = 3.14
+        }
+        // console.log("pi => ", pi);
+
+        // console.log('num3 => ', num3);
+
+        var num4; // 변수 선언만!!!
+        // console.log('num4 => ', num4);
+
+        // hoisting 에 의해 num5 값이 undefined 이다.
+        //console.log('num5 => ', num5); // expected output: num5 => undefined
+        // console.log('num6 => ', num6);
+        
+        var num5 = 10;
+        let num6 = 100;
+        //console.log('num6 => ', num6);
+
+        // 대입 연산 : 변수 = 값(리터럴) 또는 변수
+        let num7 = num6;
+        // let num7 = 1000;
+        //console.log("num7 => ", num7);
+
+        // 복합 대입 연산자
+        // += => 변수 += 10 => 변수 = 변수 + 10
+        num8 = 100;
+        num8 = num8 + 10 // => num8 = 100 + 10 => num8 = 110
+        //console.log('num8 = num8 + 10 =>', num8);
+
+        num8 = num8 + 100 // => num8 = 110 + 100 => num8 = 210
+        //console.log('num8 = num8 + 10 =>', num8);
+
+        // -= => num = num - 10 => num -= 10
+        // *= => num = num * 2 => num *= 2
+        // /= => num = num / 2 => num /= 2
+        // %= => num = num % 2 => num %= 2
+
+        // 단항 연산자 : 하나의 변수에
+        // ++ -- => 1씩 증가, 1씩 감소 => num++, num--, ++num, --num
+
+        let num9 = 0;
+        let result = 0;
+        //console.log('num9 => ', num9); // 0
+        // num9++;
+        // ++num9
+        // result = ++num9; // 전위
+        result = num9++; // 후위
+        //console.log('num9++ => ', num9, 'result => ', result);
+        // num9--;
+        // --num9;
+        // console.log('num9-- => ', num9); // 0
+        result = num9--;
+        //console.log('num9-- => ', num9, 'result => ', result);
+
+        // 변수 선언 : var, let, const
+        // 변수 : 데이터의 참조값(데이터의 메모리 주소) 저장
+        //        다른 값을 저장하는 것도 가능
+
+        // 타입 : 숫자(number), 문자열(string), 논리(boolean), 함수(function)
+        //        객체(object), 배열[](object)
+        //       undefined => 선언되지 않은 변수 호출, 데이터 초기화 하지 않았을 때
+        // 숫자 : 사칙연산( + - * / %), 대입연산,
+        //       복합대입연산자( += -= *= /= %= ), 단항( + - ),
+        //       증감 연산자( ++ -- ) : 전위, 후위, 1씩 증가
+        // 논리 : boolean => true / false
+        //       비교 연산자 ( == === )
+        //       논리 연산자 ( ! 논리부정연산자, &&, || )
+
+        // 사용자가 문자열을 입력하면 사용자에게 입력한 문자열을 반환해준다. 
+        // 아무것도 입력하지 않으면 사용자에게 null 값을 반환해준다.
+        // let userName = prompt('이름을 입력하세요');
+        // console.log('사용자가 입력한 이름 => ', userName);
+
+        //let birthYear = prompt('태어난 년도를 입력하세요', 1995);
+        let birthYear = '2000';
+        console.log('태어난 년도 => ', birthYear, typeof(birthYear));
+
+        let yearNumber = Number(birthYear);
+        console.log('yearNumber => ', yearNumber, typeof(yearNumber));
+
+        // 문자열 => 숫자 타입 변경
+        // Number(문자열) => 숫자 타입의 값으로 변환 
+
+        let age = 2024 - yearNumber;
+
+        console.log('성인 판별 => ', age >= 19 ? "성인" : "미성년자");
+
+        // 문자열로 변환 : string
+        let num10 = 100;
+        console.log('num10 => ', num10, typeof(num10));
+        let numberStr1 = String(num10);
+        console.log('numberStr1 => ', numberStr1, typeof(numberStr1));
+        let numberStr2 = num10 + '';
+        console.log('numberStr2 => ', numberStr2, typeof(numberStr2)); // 숫자 + 문자열 => 문자열 + 문자열 => 문자열
+
+        let check = true;
+        console.log('check => ', check, typeof(check));
+        let chkStr1 = String(check);
+        console.log('chkStr1 => ', chkStr1, typeof(chkStr1));
+        let chkStr2 = check + ''; // bool + string => string
+        console.log('chkStr2 => ', chkStr2, typeof(chkStr2));
+
+        // string -> bool, number -> bool
+        // Boolean(값) => 논리값
+        // 0, '', null, undefined, NaN => false
+        // ! 논리부정 연산자 : ! 뒤에 논리값이 나와야 한다.
+        console.log('!1 => ', !1); // !true => false
+        console.log('!\'\'', !''); // !false => true
+        console.log('!\'aaa\'', !'aaa'); // !true => false
+        
+        console.log(Boolean(1)); // true
+        console.log(Boolean('abc')); // true
+        console.log(Boolean([])); // true
+        console.log(Boolean(0)); // false
+        console.log(Boolean(NaN)); // false
+        console.log(Boolean('')); // false
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
