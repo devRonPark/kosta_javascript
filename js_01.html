@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript | 문자열 다루기</title>
+    <script>
+        // 문자열 표현
+        // 보통 "" 또는 '' 로 묶어 표현
+        console.log('Hello World!')
+        console.log("Hi Ran");
+        // 인용부호나 특수부호를 표현하고 싶다면?
+        console.log("나는 \"안녕\"이라고 말했다.");
+        console.log("\'나는\' \"안녕\"이라고 말했다.");
+        console.log(`나는 "안녕"이라고 말했다.`);
+        console.log(`나는 '안녕'이라고 말했다.`);
+        console.log(`'나는' "안녕"이라고 말했다.`);
+        
+        // 모두 동일한 문자열 <img src="img.jpg">을 출력
+        // 이스케이프 문자(\)를 사용하여 ""(큰따옴표)를 출력
+        console.log("<img src=\"img.jpg\">");
+        // 작은따옴표로 문자열을 감싸면 ""(큰따옴표)를 출력 시 별도의 이스케이프가 필요하지 않다.
+        console.log('<img src="img.jpg">');
+        // 템플릿 리터럴은 문자열 내에서 큰따옴표와 작은따옴표를 직접 사용할 수 있으며 별도의 이스케이프가 필요하지 않다.
+        console.log(`<img src="img.jpg">`);
+
+        // 한 줄 주석
+        /*
+            블록 주석
+        */
+
+        // console.log : 콘솔에 문자열을 출력해주는 메서드
+        // console 객체가 log 라는 메서드를 가지고 있다.
+        console.log('나는\t손흥민입니다.');
+        console.log('나는\n손흥민입니다.');
+        console.log('나는\\손흥민입니다.');
+
+        // 특정 디렉토리 경로 출력
+        console.log('C:\\web_class\\js');
+
+        // 숫자 + 숫자 -> 숫자
+        console.log(5 + 5); // expected ouput : 10
+        // 문자열 + 문자열 -> 문자열
+        // + 연산자를 사용하여 두 개의 문자열을 연결
+        console.log('Hello ' + 'World'); // expected output : Hello World
+        // 문자열 + 숫자 -> 문자열
+        // 숫자를 문자열로 형변환한 후 연산
+        console.log('1' + 23456); // expected ouput : 123456
+
+        // 문자열의 특정 위치의 문자 접근
+        const str = 'Hello World';
+        // [](대괄호) 를 사용해 배열처럼 문자열 내의 각 문자에 접근
+        console.log(str[2]); // expected output : l
+        // charAt() 메서드는 특정 위치의 문자 접근
+        console.log(str.charAt(2)); // expected output : l
+        // substring() 메서드는 문자열의 부분 문자열을 반환
+        console.log(str.substring(2, 3)); // expected output : 1
+
+        // 문자열의 길이
+        const str2 = "I'm learning JavaScript!";
+        // 공백과 특수 문자를 포함한 전체 문자의 개수 출력
+        console.log(str2.length);
+
+        let num2;
+
+        // 타입 확인 : typeof(값) => 타입의 문자열
+        console.log(typeof str2); // expected output: string
+        console.log(typeof(100)); // expected output: number
+        console.log(typeof(true)); // expected output: boolean
+        // 선언되지 않은 변수 접근
+        console.log(typeof(num1)); // expected output: undefined 
+        // 선언했지만 초기화되지 않은 변수 접근
+        console.log(typeof(num2)); // expected output: undefined
+
+        function plus() {
+            console.log("더하기 함수");
+        }
+
+        console.log('function plus : ', typeof(plus));
+        console.log('{} => ', typeof({}));
+        console.log('[] => ', typeof([]));
+
+        // `` => `${식별자, 연산, 함수 호출}`
+        let name = '손흥민';
+        console.log('안녕하세요. 저는 ' + name + '입니다.');
+        console.log(`안녕하세요. 저는 ${name}입니다.`);
+
+        const href_str = "https://www.naver.com";
+        const label = "naver";
+        console.log(`<a href="${href_str}">${label}</a>`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
