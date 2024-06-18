@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 배열 : 변수들의 묶음
+        // 규격화된 데이터들이 있으며 일괄 처리해야 하고 반복 처리해야 하는 작업이 있을 때 배열 사용
+        // 배열의 생성 : [요소, 요소, 요소, ...]
+        let arr1 = [1, 2, 3];
+        console.log('arr1 => ', arr1, typeof(arr1));
+        
+        let arr2 = [100, 'str', false, function() {}, {}, []];
+        console.log('arr2 => ', arr2, typeof(arr2));
+        
+        // 배열 컨트롤 : 참조(접근), 개수, 요소 추가, 요소 삭제
+        let arr3 = [1, 2, 3, 4, 5];
+        console.log('arr3 배열의 첫번째 요소 값 => ', arr3[0]);
+        console.log('arr3 배열의 마지막 요소 값 => ', arr3[4]);
+        console.log('arr3 배열의 마지막 요소 값 => ', arr3[arr3.length - 1]);
+        console.log('arr3 배열의 요소의 개수 => ', arr3.length);
+
+        // 배열의 요소 추가 : 배열.push() -> 마지막 index 다음에 추가 
+        arr3.push(6);
+        console.log(arr3);
+        console.log(arr3.length);
+
+        // 배열의 특정 index에 위치한 값 제거(삭제)
+        // 배열.slice(index, 제거하고자하는 요소의 개수)
+        arr3.splice(2, 1);
+        console.log(arr3);
+        console.log(arr3.length);
+
+        // for 반복문
+        // for (초기식; 조건식; 증감식) { }
+        for (let i = 0; i < 5; i++) {
+            console.log(i);
+        }
+
+        for (let i = 0; i < arr3.length; i++) {
+            console.log(arr3[i]);
+        }
+
+        console.log('===============================');
+        for (const item in arr3) {
+            console.log(arr3[item]);
+        }
+
+        console.log('===============================');
+        console.log('for of');
+        for (let item of arr3) {
+            console.log(item);
+        }
+
+        // while (반복의 조건 bool)
+        // let num = 0;
+        // while (num < 5) {
+        //     console.log(num);
+        //     num++;
+        // }
+
+        // 1부터 더해 나가면서 합이 100 최초 넘어갈 때 마지막 입력값을 찾아보자
+        let n = 1;
+        let sum = 0;
+
+        // while (sum < 100) {
+        //     sum += n;
+        //     n++;
+        // }
+
+        while (true) {
+            sum += n;
+
+            if (sum > 100) {
+                console.log(n, '을 더했을 때 최초 100이 넘어갑니다. 합은 ', sum);
+                break;
+            }
+            else n++;
+        }
+
+        // 1~10까지의 숫자 중 짝수만 출력 : continue
+        for (let i = 1; i <= 10; i++) {
+            if (i % 2 == 1) continue; // 아래 구문 건너뛰고 위로 이동
+
+            console.log(i);
+        }
+
+        n = 0;
+        while (n < 11) {
+            n++;
+            if (n % 2 == 1) continue; // 아래 구문 건너뛰고 위로 이동
+
+            console.log(n);
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
