@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 임의의 정수 생성(1~100)
+        const randNum = Math.floor(Math.random() * 100) + 1;
+        let turn = 1;
+
+        while(true) {
+            turn++;
+            // 턴은 10번까지만
+            if (turn > 10) {
+                alert("Game Over!!!");
+                break;
+            }
+
+            // 숫자를 입력 받고 high/low 체크
+            userIpt = Number(prompt(`[${turn}번째 턴] 1~100 사이의 숫자를 입력하세요`));
+            // 숫자 이외의 입력값에 대한 예외 처리
+            if (isNaN(userIpt)) {
+                alert('숫자를 입력해주세요.');
+                userIpt = Number(prompt(`[${turn}번째 턴] 1~100 사이의 숫자를 입력하세요`));
+            } else {
+                // 정답 판단
+                if (userIpt > randNum) alert("low");
+                else if (userIpt < randNum) alert("high");
+                else {
+                    alert("정답");
+                    break;       
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
