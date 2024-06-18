@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 콜백 함수
+        // 함수 => 1급 객체, 변수에 함수를 정의
+        // 매개변수 = function () {}
+        // 함수의 매개변수로 전달되는 함수 => 콜백 함수
+        // 동기화 => 함수 호출 후 함수가 모든 기능을 수행할 때까지 대기 후 실행
+        // 비동기 => 웹 기반 통신 (Rest API) => promise
+
+        function callTenTimes(callback) {
+            // callback = function() {}
+            for(let i=0; i<10; i++) {
+                callback(i);
+            }
+        }
+
+        // callTenTimes(function(i) {
+        //     console.log(`${i} 번째 함수 호출`);
+        // });
+
+        const callbackFn = function (val, index) {
+            console.log(index, val);
+        }
+        const cfn1 = function(val, index, temp) {
+            return val%10;
+        }
+        const checkEven = function (num, idx, temp) {
+            return num % 2 == 0;
+        } 
+
+        const arr = [111, 112, 113, 114, 115, 116, 117, 118, 119];
+        arr.forEach(callbackFn);
+
+        const arr1 = arr.map(cfn1);
+        console.log("arr1 => ", arr1);
+
+        const arr2 = arr.filter(checkEven);
+        console.log("arr2 => ", arr2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
