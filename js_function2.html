@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 매개변수 : 함수가 호출될 때 받는 값을 저장하는 변수
+        // 가변 매개변수 : 호출할 때 매개변수의 개수가 고정이 아닌 가변일 때 사용
+
+        function test1(...items) {
+            console.log(items);
+        }
+
+        test1(1, 2);
+        test1(1, 2, 3, 4);
+        test1(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+        // 전달되는 값들 중 가장 큰수를 반환하는 함수
+        function getMaxNum(...numbers) {
+            return Math.max(...numbers);
+        }
+
+        function getMaxNum2(...numbers) {
+            let maxNum = numbers[0];
+
+            for (let num of numbers) {
+                if (num > maxNum) maxNum = num;
+            }
+            return maxNum;
+        }
+
+        const maxNum = getMaxNum(1, 2, 3, 4, 5, 6, 7, 8, 9, 59);
+        const maxNum2 = getMaxNum2(1, 2, 3, 4, 5, 6, 7, 8, 9, 59);
+        console.log("maxNum => ", maxNum);
+        console.log("maxNum2 => ", maxNum2);
+
+        // 기본 매개변수
+        function test3(name, age=19, gender='M') {
+            console.log(name);
+            console.log(age);
+            console.log(gender);
+        }
+        test3('king');
+
+        // 매개변수로 시급과 시간을 입력받아 급여를 계산하는 함수를 만들어 봅시다.
+        // 함수 이름: earnings
+        // 매개변수: name(이름), wage(시급), hours(시간)
+        // 함수의 역할: 이름, 시급, 시간을 출력하고 시급과 시간을 곱한 최종 급여 출력
+        // 만약 wage와 hours를 입력하지 않고 실행하면 wage에 최저 임금이 들어가고,
+        // hours에 법정근로시간 1주일 40시간이 기본 매개변수로 입력
+        function earnings(name, wage = 9860, hours = 40) {
+            console.log(`이름: ${name}, 시급: ${wage}, 근로시간: ${hours}, 급여: ${wage * hours}`);
+        }
+
+        earnings('king');
+        earnings('gildong', 20000, 50);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
