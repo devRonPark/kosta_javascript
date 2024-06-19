@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap {
+            display: flex;
+
+        }
+        .box {
+            border: 1px solid #aaa;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+
+        }
+    </style>
+    <script>
+        const menus = [
+            {
+                name: 'Americano',
+                price: 1500,
+                category: 'coffee'
+            },
+            {
+                name: 'Latte',
+                price: 2500,
+                category: 'coffee'
+            },
+            {
+                name: 'Espresso',
+                price: 2000,
+                category: 'coffee'
+            },
+        ]
+
+        // load
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. 타깃(새롭게 위치할 위치) 엘리먼트 캐스팅
+            const wrap = document.querySelector('#wrap');
+            // 2. 새로운 엘리먼트 객체 생성
+            // const newEl = document.createElement('h2');
+            // 속성, 스타일...
+            // newEl.textContent = '동적으로 생성한 h2 tag';
+            // newEl.style.textAlign = 'center';
+            // newEl.style.color = 'blue';
+            // newEl.style.backgroundColor = 'yellow';
+            // 3. 타깃에 새로운 엘리먼트 추가(append child)
+            // wrap.appendChild(newEl);
+
+            // 이미지 태그 생성
+            // const newImg = document.createElement('img');
+            // newImg.setAttribute('src', 'image/mini.jpg');
+            // wrap.appendChild(newImg);
+
+            // menus 반복해서 appendChild
+            menus.forEach((item, index) => {
+                // div > h3(상품명), p(가격)
+                const newDiv = document.createElement('div');
+                const newH3 = document.createElement('h3');
+                const newP = document.createElement('p');
+                newH3.textContent = item.name;
+                newP.textContent = `${item.price}원`;
+                newDiv.appendChild(newH3);
+                newDiv.appendChild(newP);
+                newDiv.classList.add('box');
+
+                wrap.appendChild(newDiv);
+            })
+        })
+    </script>
+</head>
+<body>
+    <h3>Cafe Menu</h3>
+    <div id="wrap"></div>
+</body>
+</html>
