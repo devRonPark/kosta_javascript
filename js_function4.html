@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 홀수 판단
+        function checkOdd(value) {
+            return value % 2 == 1;
+        }
+
+        const fn = value => value % 2 == 1;
+
+
+        const numbers = [1, 2, 3, 4, 5]
+        // filter, map : 각각 새로운 배열 반환
+        numbers.filter(
+            val => val % 2 == 1
+        ).map(
+            val => val * val
+        ).forEach(
+            val => console.log(val)
+        )
+
+        // eval()
+        const codeRun = `
+            const num1 = 1111;
+            alert(num1);
+        `;
+
+        eval(codeRun);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
