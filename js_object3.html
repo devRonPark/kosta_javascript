@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // JSON : JSON 타입의 형식 변환
+        // object => JSON, JSON => object
+        const menu = {
+            productName: 'Americano',
+            price: 1500,
+            size: 'XL',
+            category: 'coffee',
+            event: false
+        }
+        console.log(menu, typeof(menu));
+
+        const jsonString = JSON.stringify(menu);
+        console.log(jsonString);
+        console.log(typeof(jsonString));
+
+        // JSON => object
+        let objJson = JSON.parse(jsonString);
+        console.log(objJson);
+        console.log(typeof(objJson));
+
+        const menus = [
+            {name: '아메리카노', price: 1500},
+            {name: '녹차', price: 2000},
+            {name: '복숭아 아이스티', price: 2000},
+        ];
+
+        const menusJson = JSON.stringify(menus);
+        console.log(menusJson);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+    "productName": "Americano",
+    "price": 3000,
+    "category": "coffee",
+    "event": true,
+    "option": {
+        "shot": 1, 
+        "ice": ["a little", "normal", "a lot"],
+        "syrup": false
+    }
+}
