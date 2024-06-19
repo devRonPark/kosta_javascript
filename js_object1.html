@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 객체 표현 => {} object
+        // 객체 : 속성, 메서드
+        // 변수, 메서드 구성 => 묶음
+        const menu1 = {
+            productName: 'Americano',
+            price: 3000,
+            category: 'Coffee'
+        }
+        const menu2 = {
+            productName: 'Ice Americano',
+            price: 3000,
+            category: 'Coffee'
+        }
+
+        // 객체의 속성 접근 -> obj[propertyName]
+        console.log("제품 이름 >> ", menu1['productName']);
+        console.log("제품 이름 >> ", menu1.productName);
+
+        // 객체의 속성은 변수와 같이 모든 타입의 자료형을 가질 수 있다.(배열, 함수, 객체 등 ...)
+        const menu3 = {
+            productName: 'Americano',
+            price: 3000,
+            category: 'Coffee',
+            makeCoffee: function() { // 객체 내의 함수 : 메서드
+                console.log('원두 20g과 뜨거운 물 120ml를 섞어서 만듭니다.');
+            }
+        }
+
+        // 객체의 메서드 호출
+        menu3.makeCoffee();
+
+        // 객체 자신의 멤버 참조 / this : 객체 자기 자신을 가리키는 변수
+        const menu4 = {
+            productName: 'Americano',
+            price: 3000,
+            category: 'Coffee',
+            makeCoffee: function() { // 객체 내의 함수 : 메서드
+                console.log(`${this.productName}는 원두 20g과 뜨거운 물 120ml를 섞어서 만듭니다.`);
+            }
+        }
+        menu4.makeCoffee();
+
+        // 객체의 속성을 동적으로 추가
+        menu4.event = false;
+        console.log(menu4);
+        if (menu4.event) {
+            alert('이벤트 상품입니다.');
+        } else {
+            alert('이벤트 미대상 상품입니다.');
+        }
+
+        // 메뉴들을 하나의 공통된 클래스로 표현
+        class Menu {
+            // #을 붙인 필드는 외부에서 접근 불가(private 속성)
+            #_name;
+            #_price;
+            #_category;
+
+            // 속성 초기화
+            constructor(name, price, category) {
+                this.#_name = name;
+                this.#_price = price;
+                this.#_category = category;
+            }
+
+            // Get menuName
+            get name() {
+                return this.#_name;
+            }
+
+            // Get price
+            get price() {
+                return this.#_price;
+            }
+
+            // Update price
+            set price(newPrice) {
+                this.#_price = newPrice;
+            }
+
+            // Get category
+            get category() {
+                return this.#_category;
+            }
+        }
+
+        const americano = new Menu('Americano', 3000, 'Coffee');
+        const iceAmericano = new Menu('Ice Americano', 3000, 'Coffee');
+        const cafeMenus = [americano, iceAmericano];
+
+        console.log("카페 메뉴는 다음과 같습니다.")
+        cafeMenus.forEach(cafeMenu => {
+            console.log(`이름: ${cafeMenu.name}, 가격: ${cafeMenu.price}`);
+        });
+
+        console.log("아메리카노의 가격을 한시적으로 2000원으로 내립니다!!!");
+        americano.price = 2000;
+        console.log("아메리카노의 가격 => ", americano.price);
+
+        // 객체 : 데이터만 가질 수도 있음.
+        const cart = [];
+        cart.push({pname: 'AAAA', price: 1000, point: 10});
+        const menus = [
+            {pname: 'AAAA', price: 1000, point: 10},
+            {pname: 'BBBB', price: 2000, point: 20},
+            {pname: 'CCCC', price: 3000, point: 30},
+            {pname: 'DDDD', price: 4000, point: 40},
+        ]
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
