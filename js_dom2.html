@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 브라우저 주소창
+        console.log('check >> ', location.href);
+
+        // 네이버 페이지로 이동
+        function goToNaver() {
+            location.href = 'https://www.naver.com';
+        }
+
+        window.onload = function () {
+            console.log("onload: 페이지 로드 완료");
+        }
+
+        // 이벤트 연결
+        // 이벤트에 연결되는 함수: 핸들러
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("문서 객체를 모두 읽고 나면 이벤트가 발생하고 콜백함수 실행");
+
+            // 문서 객체가 모두 로드된 후에 HTML 요소에 접근 가능
+            const h1Elem = document.getElementById('h1');
+            console.log(h1Elem.innerHTML);
+
+            // 캐스팅 : 문서 객체 생성
+            // querySelector : css 선택자를 이용해서 캐스팅
+            const div_el = document.querySelector('div');
+    
+            // 텍스트 변경, 컬러, padding, margin, font-size
+            div_el.textContent = 'HEADER';
+            div_el.style.backgroundColor = 'yellow';
+            div_el.style.color = 'blue';
+            div_el.style.padding = '20px';
+            div_el.style.fontSize = '32px';
+
+            // 스타일 변경은 되도록 클래스를 추가 및 삭제를 통해 처리하는 걸 권장
+            // div_el.classList.add("className")
+            // div_el.classList.remove("className")
+            // div_el.classList.toggle("className")
+
+            // 여러 개의 엘리먼트 캐스팅
+            const h3s = document.querySelectorAll('h3');
+            console.log(h3s);
+
+            h3s.forEach((item, index) => {
+                //    item.textContent += index;
+                item.innerHTML = item.innerHTML + `<i>${index}</i>`;
+                item.style.color = 'red';
+            });
+
+            // 속성 컨트롤
+            const a_el = document.querySelector('a');
+            const href_str = a_el.getAttribute('href');
+            console.log('href >> ', href_str);
+            a_el.setAttribute('href', 'https://www.google.com');
+
+        });
+
+
+    </script>
+</head>
+<body>
+    <a href="https://www.naver.com">Naver</a>
+
+    <h3>heading - 3</h3>
+    <h3>heading - 3</h3>
+    <h3>heading - 3</h3>
+    <h3>heading - 3</h3>
+    <h3>heading - 3</h3>
+    <h1 id="h1" onclick="goToNaver()"><span>페이지 이동</span></h1>
+    <div>test</div>
+</body>
+</html>
