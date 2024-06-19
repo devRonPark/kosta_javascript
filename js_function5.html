@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 타이머 함수
+        // setInterval(callbackFn, ms) // id(숫자) 반환
+        // clearInterval(timerId)
+        // setTimeout(callbackFn, ms)
+        // clearTimeout(timerId)
+
+        // 1초 후 출력되는 메시지
+        let id1 = setTimeout(() => {
+            console.log("1초 후 출력됨.")
+        }, 1000);
+        let id2 = setTimeout(() => {
+            console.log("3초 후 출력됨.")
+        }, 3000);
+
+        // 2초마다 반복
+        let n = 0;
+        let id3 = setInterval(() => {
+            console.log("2초마다 출력되는 메시지 " + n++);
+            if (n == 3) {
+                console.log("3번 반복 후 반복을 멈춘다.");
+                clearInterval(id3);
+            }
+        }, 2000);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
